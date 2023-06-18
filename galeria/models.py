@@ -1,13 +1,14 @@
 from django.db import models
+
 from datetime import datetime
 
 class Fotografia(models.Model):
 
     OPCOES_CATEGORIA = [
-        ("NEBULOSA", "Nebulosa"),
-        ("ESTRELA", "Estrela"),
-        ("GALÁXIA", "Galáxia"),
-        ("PLANETA", "Planeta")
+        ("NEBULOSA","Nebulosa"),
+        ("ESTRELA","Estrela"),
+        ("GALÁXIA","Galáxia"),
+        ("PLANETA","Planeta"),
     ]
 
     nome = models.CharField(max_length=100, null=False, blank=False)
