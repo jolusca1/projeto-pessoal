@@ -20,6 +20,11 @@
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
+                {% for message in messages %}
+                <div>
+                    <p id="messages">{{ message }}</p>
+                </div>
+                {% endfor %}
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
                     <form action="{% url 'buscar' %}">
@@ -41,7 +46,7 @@
                 </nav>
             </section>
             <section class="galeria" style="margin-left: 5em">
-                <form action="" method="">
+                <form action="{% url 'login' %}" method="POST">
                     {% csrf_token %}
                     <div class="row">
                         {% for field in form.visible_fields %}
