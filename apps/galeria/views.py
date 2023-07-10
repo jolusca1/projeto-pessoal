@@ -49,8 +49,11 @@ def nova_imagem(request):
             
     return render(request, 'galeria/nova_imagem.html', {'form': form})
 
-def editar_imagem(request):
-    pass
+def editar_imagem(request, foto_id):
+    fotografia = Fotografia.objects.get(id=foto_id)
+    form = FotografiaForms(instance=fotografia)
+    
+    return render(request, 'galeria/editar_imagem.html', {'form': form})
 
 def deletar_imagem(request):
     pass
